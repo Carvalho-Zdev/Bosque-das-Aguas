@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f2f0e9;
+    color: #183126;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ENTRADA */
+
+.entrada {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background:
+        linear-gradient(rgba(8, 25, 17, .42), rgba(8, 25, 17, .58)),
+        url("05-areaverde.jpg") center/cover no-repeat;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.entrada.oculta {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.entrada-conteudo {
+    padding: 30px;
+}
+
+.entrada-local {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.entrada h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(60px, 9vw, 135px);
+    line-height: .82;
+    font-weight: 500;
+}
+
+.entrada-descricao {
+    margin: 30px 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+#entrarSite {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.8);
+    color: white;
+    padding: 16px 38px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#entrarSite:hover {
+    background: white;
+    color: #183126;
+}
+
+/* MENU */
+
+.menu {
+    height: 82px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f2f0e9;
+    position: relative;
+    z-index: 20;
+}
+
+.logo {
+    color: #183126;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    font-weight: 300;
+}
+
+.menu nav {
+    display: flex;
+    gap: 35px;
+}
+
+.menu nav a {
+    color: #183126;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.botao-musica {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #183126;
+    background: transparent;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+/* HERO */
+
+.hero {
+    height: calc(100vh - 82px);
+    min-height: 650px;
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+
+.hero > img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(5, 25, 16, .68),
+        rgba(5, 25, 16, .10)
+    );
+}
+
+.hero-conteudo {
+    position: absolute;
+    left: 7%;
+    bottom: 12%;
+    z-index: 2;
+}
+
+.hero-conteudo p {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+}
+
+.hero-conteudo h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 6vw, 90px);
+    font-weight: 500;
+    line-height: .98;
+    margin-bottom: 38px;
+}
+
+.botao {
+    display: inline-block;
+    padding: 16px 25px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.botao:hover {
+    background: white;
+    color: #183126;
+}
+
+/* SEÇÕES */
+
+.secao {
+    padding: 130px 6%;
+}
+
+.titulo-secao {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    margin-bottom: 70px;
+}
+
+.titulo-secao > span {
+    font-size: 12px;
+    opacity: .55;
+    padding-top: 10px;
+}
+
+.titulo-secao p,
+.video-texto p,
+.agua-texto p,
+.piscina-texto p {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.titulo-secao h2,
+.video-texto h2,
+.agua-texto h2,
+.piscina-texto h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 72px);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+/* NATUREZA */
+
+.natureza-grid {
+    display: grid;
+    grid-template-columns: 1.25fr .75fr .9fr;
+    gap: 20px;
+    align-items: end;
+}
+
+.natureza-grid img:nth-child(1) {
+    height: 650px;
+}
+
+.natureza-grid img:nth-child(2) {
+    height: 470px;
+}
+
+.natureza-grid img:nth-child(3) {
+    height: 570px;
+}
+
+/* VÍDEO PRINCIPAL */
+
+.video-destaque {
+    height: 90vh;
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.video-destaque video {
+    width: 100%;
+    height: 100%;
+}
+
+.video-destaque::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 20, 13, .30);
+}
+
+.video-texto {
+    position: absolute;
+    z-index: 2;
+    left: 7%;
+    bottom: 10%;
+}
+
+/* ESTRUTURA */
+
+.estrutura {
+    background: #173226;
+    color: #f4f1e8;
+}
+
+.estrutura-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+}
+
+.estrutura-grid img {
+    height: 480px;
+}
+
+.estrutura-grid img:nth-child(1) {
+    grid-column: 1 / 8;
+}
+
+.estrutura-grid img:nth-child(2) {
+    grid-column: 8 / 13;
+}
+
+.estrutura-grid img:nth-child(3) {
+    grid-column: 1 / 5;
+}
+
+.estrutura-grid img:nth-child(4) {
+    grid-column: 5 / 13;
+}
+
+/* FAUNA */
+
+.fauna-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.fauna-grid img {
+    height: 720px;
+}
+
+/* ÁGUA */
+
+.agua {
+    background: #d7ded6;
+    padding: 130px 6%;
+}
+
+.agua-texto {
+    max-width: 750px;
+    margin-bottom: 70px;
+}
+
+.agua-videos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.agua-videos video {
+    height: 700px;
+}
+
+/* PISCINA */
+
+.piscina {
+    padding: 130px 6%;
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.piscina-imagens {
+    display: grid;
+    grid-template-columns: 1fr .7fr;
+    gap: 20px;
+    align-items: end;
+}
+
+.piscina-imagens img:first-child {
+    height: 650px;
+}
+
+.piscina-imagens img:last-child {
+    height: 470px;
+}
+
+/* GALERIA */
+
+.galeria {
+    background: #e6e2d8;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.galeria-grid img {
+    height: 550px;
+}
+
+/* VÍDEO FINAL */
+
+.video-final {
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    color: white;
+}
+
+.video-final video {
+    height: 100%;
+}
+
+.video-final::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 20, 13, .35);
+}
+
+.video-final-overlay {
+    position: absolute;
+    z-index: 2;
+    left: 7%;
+    bottom: 10%;
+}
+
+.video-final-overlay p {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.video-final-overlay h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 8vw, 120px);
+    line-height: .9;
+    font-weight: 500;
+}
+
+/* VENDEDORES */
+
+.atendimento {
+    background: #f2f0e9;
+}
+
+.vendedores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.vendedores-grid img {
+    height: 650px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #10271d;
+    color: white;
+    min-height: 70vh;
+    padding: 110px 7% 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+footer h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(65px, 10vw, 150px);
+    line-height: .78;
+    font-weight: 500;
+    margin: 25px 0 40px;
+}
+
+.footer-mini {
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.copyright {
+    margin-top: 60px;
+    opacity: .5;
+    font-size: 11px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .menu nav {
+        display: none;
+    }
+
+    .secao,
+    .agua,
+    .piscina {
+        padding: 80px 20px;
+    }
+
+    .natureza-grid,
+    .fauna-grid,
+    .agua-videos,
+    .piscina,
+    .piscina-imagens,
+    .galeria-grid,
+    .vendedores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .natureza-grid img,
+    .fauna-grid img,
+    .agua-videos video,
+    .piscina-imagens img,
+    .galeria-grid img,
+    .vendedores-grid img {
+        height: 480px !important;
+    }
+
+    .estrutura-grid {
+        display: block;
+    }
+
+    .estrutura-grid img {
+        width: 100%;
+        height: 450px;
+        margin-bottom: 20px;
+    }
+
+    .hero-conteudo {
+        left: 20px;
+        right: 20px;
+    }
+
+}
